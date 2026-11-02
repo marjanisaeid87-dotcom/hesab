@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0f766e">
+<title>حساب شخصی</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ صفحه ورود ============ -->
+<section id="login" class="login hidden">
+  <form id="loginForm" class="login-card" autocomplete="on">
+    <div class="brand"><img src="icon.svg" alt=""><h1>حساب شخصی</h1></div>
+    <label>ایمیل<input id="email" type="email" required autocomplete="username" dir="ltr"></label>
+    <label>رمز عبور<input id="password" type="password" required autocomplete="current-password" dir="ltr"></label>
+    <label class="check"><input id="remember" type="checkbox"> مرا به خاطر بسپار (فقط روی دستگاه شخصی)</label>
+    <button type="submit" class="btn primary block" id="loginBtn">ورود</button>
+    <p id="loginMsg" class="msg"></p>
+    <div id="demoBox" class="demo-box hidden">
+      <p>هنوز اتصال Supabase تنظیم نشده (فایل <code>config.js</code>). می‌توانید برنامه را در حالت نمایشی امتحان کنید؛ داده‌ها فقط در همین مرورگر ذخیره می‌شوند.</p>
+      <button type="button" class="btn block" id="demoBtn">ورود نمایشی</button>
+    </div>
+  </form>
+</section>
+
+<!-- ============ برنامه ============ -->
+<div id="app" class="hidden">
+  <header class="topbar">
+    <div class="brand small"><img src="icon.svg" alt=""><span>حساب شخصی</span><span id="demoTag" class="tag hidden">نمایشی</span></div>
+    <nav class="tabs" id="tabs">
+      <button data-tab="dash" class="active">داشبورد</button>
+      <button data-tab="tx">تراکنش‌ها</button>
+      <button data-tab="debts">بدهی و طلب</button>
+      <button data-tab="settings">تنظیمات</button>
+    </nav>
+  </header>
+
+  <main id="view"></main>
+
+  <button id="fab" class="fab" title="ثبت تراکنش" aria-label="ثبت تراکنش">+</button>
+</div>
+
+<!-- ============ پنجره‌ها ============ -->
+<dialog id="modal"><form method="dialog" id="modalForm" class="modal"></form></dialog>
+<div id="toast" class="toast"></div>
+
+<script src="config.js"></script>
+<script src="supabase.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
