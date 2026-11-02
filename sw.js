@@ -1,5 +1,5 @@
 // کش ساده برای باز شدن سریع برنامه؛ داده‌های مالی هرگز کش نمی‌شوند.
-const CACHE = 'hesab-v1';
+const CACHE = 'hesab-v2';
 const SHELL = ['./', 'index.html', 'app.js', 'style.css', 'supabase.js', 'config.js', 'icon.svg', 'manifest.json'];
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL))); self.skipWaiting(); });
 self.addEventListener('activate', (e) => { e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== CACHE).map((k) => caches.delete(k))))); self.clients.claim(); });

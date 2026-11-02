@@ -1,12 +1,12 @@
 {
-  "name": "حساب شخصی",
-  "short_name": "حساب شخصی",
+  "name": "حساب شخصی سعید",
+  "short_name": "حساب سعید",
   "lang": "fa",
   "dir": "rtl",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f4f6f8",
-  "theme_color": "#0f766e",
+  "background_color": "#F6F8F8",
+  "theme_color": "#16A6A1",
   "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
 }
